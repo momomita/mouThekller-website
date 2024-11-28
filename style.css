@@ -1,0 +1,165 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.birthdayCard {
+  width: 500px;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cardFront, .cardInside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Card Front */
+.cardFront {
+  background-color: #f8c471;
+  color: #ff6347;
+}
+
+.happy {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.balloons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.balloons div {
+  width: 40px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ff6f61;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+
+.balloonOne {
+  background-color: #f39c12;
+  left: 15%;
+}
+
+.balloonTwo {
+  background-color: #1f77b4;
+  left: 30%;
+}
+
+.balloonThree {
+  background-color: #2ecc71;
+  left: 45%;
+}
+
+.balloonFour {
+  background-color: #9b59b6;
+  left: 60%;
+}
+
+.balloon-1 {
+  background-color: #e74c3c;
+  left: 75%;
+}
+
+.balloon-2 {
+  background-color: #34495e;
+  left: 85%;
+}
+
+.balloon-3 {
+  background-color: #8e44ad;
+  left: 50%;
+}
+
+.balloon-4 {
+  background-color: #f1c40f;
+  left: 20%;
+}
+
+.balloons div {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Card Inside */
+.cardInside {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  z-index: 0;
+  visibility: hidden;
+}
+
+.cardInside h3.back {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #2980b9;
+}
+
+.cardInside p {
+  font-size: 1em;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #e74c3c;
+}
+
+/* Hover Effect to Open Card */
+.birthdayCard:hover .cardFront {
+  visibility: hidden;
+}
+
+.birthdayCard:hover .cardInside {
+  visibility: visible;
+}
